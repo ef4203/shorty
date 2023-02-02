@@ -1,5 +1,5 @@
-# shorty
-Minimal self-hosted link shortener
+# Shorty
+Shorty is a minimal self-hosted link shortener.
 
 ## Getting started
 You can run a prebuild container from docker hub directly on any machine with docker installed.
@@ -8,8 +8,10 @@ You can run a prebuild container from docker hub directly on any machine with do
 docker run -it --network=host --rm ef4203/shorty:latest
 ```
 
-## Build shorty from source
-You can build shorty yourself from source.
+Finally you can upen shorty in your browser under http://localhost
+
+## Build Shorty from source
+You can build Shorty yourself from source.
 
 Requirements:
 - Docker
