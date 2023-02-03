@@ -1,29 +1,36 @@
-﻿namespace Shorty.Web
+﻿namespace Shorty.Web;
+
+using Microsoft.EntityFrameworkCore;
+using Shorty.Data;
+
+/// <summary>
+///     Class which contains the entry point of the application.
+/// </summary>
+public class Program
 {
-    using Microsoft.AspNetCore;
-    using Microsoft.AspNetCore.Hosting;
-
     /// <summary>
-    /// Class which contains the entry point of the application.
+    ///     Defines the entry point of the application.
     /// </summary>
-    public class Program
+    /// <param name="args">The arguments.</param>
+    public static void Main(string[] args)
     {
-        /// <summary>
-        /// Defines the entry point of the application.
-        /// </summary>
-        /// <param name="args">The arguments.</param>
-        public static void Main(string[] args)
-        {
-            CreateWebHostBuilder(args).Build().Run();
-        }
+        var builder = WebApplication.CreateBuilder(args);
 
-        /// <summary>
-        /// Creates the web host builder.
-        /// </summary>
-        /// <param name="args">The arguments.</param>
-        /// <returns>The web host.</returns>
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+        builder.Services.AddControllers();
+        builder.Services.AddLogging();
+        builder.Services.AddDbContext<ApplicationContext>(
+            o => o.UseSqlite("Data Source=data.db"));
+        builder.Services.AddControllersWithViews();
+
+        var app = builder.Build();
+
+        app.MapControllers();
+        app.UseFileServer();
+
+        using var scope = app.Services.CreateScope();
+        var db = scope.ServiceProvider.GetRequiredService<ApplicationContext>();
+        db.Database.Migrate();
+
+        app.Run();
     }
 }
