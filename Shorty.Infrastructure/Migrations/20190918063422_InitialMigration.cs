@@ -2,7 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Shorty.Data.Migrations
+namespace Shorty.Infrastructure.Migrations
 {
     public partial class InitialMigration : Migration
     {
@@ -12,13 +12,13 @@ namespace Shorty.Data.Migrations
                 name: "Shorthands",
                 columns: table => new
                 {
-                    URL = table.Column<string>(nullable: false),
+                    Url = table.Column<string>(nullable: false),
                     Destination = table.Column<string>(nullable: false),
                     DateAdded = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Shorthands", x => x.URL);
+                    table.PrimaryKey("PK_Shorthands", x => x.Url);
                 });
         }
 

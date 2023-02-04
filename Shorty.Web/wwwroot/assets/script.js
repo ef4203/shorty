@@ -4,7 +4,7 @@ function createShortHand() {
     if (!data || data === "") return;
 
     var request = new XMLHttpRequest();
-    request.open('POST', '/_', true);
+    request.open('POST', '/s', true);
     request.setRequestHeader('Content-Type', 'application/json');
     request.send(JSON.stringify({
         destination: data

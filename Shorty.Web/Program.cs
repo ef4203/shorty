@@ -1,26 +1,33 @@
 ﻿namespace Shorty.Web;
 
 using Microsoft.EntityFrameworkCore;
-using Shorty.Data;
+using Serilog;
+using Shorty.Application;
+using Shorty.Application.Common.Abstraction;
+using Shorty.Infrastructure;
 
-/// <summary>
-///     Class which contains the entry point of the application.
-/// </summary>
-public class Program
+public static class Program
 {
-    /// <summary>
-    ///     Defines the entry point of the application.
-    /// </summary>
-    /// <param name="args">The arguments.</param>
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        // Configure logging.
+        Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Debug()
+            .WriteTo.Console()
+            .CreateLogger();
+
+        builder.Host.UseSerilog();
+
         builder.Services.AddControllers();
         builder.Services.AddLogging();
+        builder.Services.AddControllersWithViews();
+        builder.Services.AddApplicationServices();
+
         builder.Services.AddDbContext<ApplicationContext>(
             o => o.UseSqlite("Data Source=data.db"));
-        builder.Services.AddControllersWithViews();
+        builder.Services.AddTransient<IApplicationContext, ApplicationContext>();
 
         var app = builder.Build();
 

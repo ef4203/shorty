@@ -4,9 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Shorty.Data;
 
-namespace Shorty.Data.Migrations
+namespace Shorty.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
     [Migration("20190918063422_InitialMigration")]
@@ -18,9 +17,9 @@ namespace Shorty.Data.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.2.6-servicing-10079");
 
-            modelBuilder.Entity("Shorty.Entities.Shorthand", b =>
+            modelBuilder.Entity("Shorty.Domain.Shorthand", b =>
                 {
-                    b.Property<string>("URL")
+                    b.Property<string>("Url")
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("DateAdded");
@@ -28,7 +27,7 @@ namespace Shorty.Data.Migrations
                     b.Property<string>("Destination")
                         .IsRequired();
 
-                    b.HasKey("URL");
+                    b.HasKey("Url");
 
                     b.ToTable("Shorthands");
                 });

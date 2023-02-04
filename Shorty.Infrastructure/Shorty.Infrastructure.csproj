@@ -12,7 +12,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Shorty.Entities\Shorty.Entities.csproj"/>
+        <ProjectReference Include="..\Shorty.Application\Shorty.Application.csproj"/>
+        <ProjectReference Include="..\Shorty.Domain\Shorty.Domain.csproj"/>
     </ItemGroup>
 
 </Project>

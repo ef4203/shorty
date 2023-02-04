@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shorty.Web", "Shorty.Web\Shorty.Web.csproj", "{57F6A774-4072-4510-B655-D12BC5F3262F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shorty.Entities", "Shorty.Entities\Shorty.Entities.csproj", "{C63FE069-98AF-40CD-AAE7-A8278C361DBB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shorty.Domain", "Shorty.Domain\Shorty.Domain.csproj", "{C63FE069-98AF-40CD-AAE7-A8278C361DBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shorty.Data", "Shorty.Data\Shorty.Data.csproj", "{506AED96-E5EB-48D9-9FFA-DB5BF47CD38C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shorty.Infrastructure", "Shorty.Infrastructure\Shorty.Infrastructure.csproj", "{506AED96-E5EB-48D9-9FFA-DB5BF47CD38C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shorty.Application", "Shorty.Application\Shorty.Application.csproj", "{D422264D-6F72-48AF-8479-12559CD778BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{506AED96-E5EB-48D9-9FFA-DB5BF47CD38C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{506AED96-E5EB-48D9-9FFA-DB5BF47CD38C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{506AED96-E5EB-48D9-9FFA-DB5BF47CD38C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D422264D-6F72-48AF-8479-12559CD778BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D422264D-6F72-48AF-8479-12559CD778BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D422264D-6F72-48AF-8479-12559CD778BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D422264D-6F72-48AF-8479-12559CD778BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
