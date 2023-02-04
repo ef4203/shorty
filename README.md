@@ -5,7 +5,7 @@ Shorty is a minimal self-hosted link shortener.
 You can run a prebuild container from docker hub directly on any machine with docker installed.
 
 ```sh
-docker run -it --network=host --rm ef4203/shorty:latest
+docker run -it -p 8080:80 --rm ef4203/shorty:latest
 ```
 
 Finally you can upen shorty in your browser under http://localhost
@@ -27,5 +27,5 @@ docker build -t local/shorty:latest .
 ```
 Finally you can run shorty with:
 ```sh
-docker run --network=host local/shorty:latest
+docker run -p 8080:80 local/shorty:latest
 ```

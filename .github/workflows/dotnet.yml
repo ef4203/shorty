@@ -5,7 +5,7 @@ name: .NET Build
 
 on:
   push:
-    branches: [ "master", "dotnet-7-upgrade" ] # temporarly include upgrade branch
+    branches: [ "master" ] # temporarly include upgrade branch
   pull_request:
     branches: [ "master" ]
 
