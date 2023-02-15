@@ -13,7 +13,7 @@ public class DeleteOutdatedShorthandsCommandHandler : IRequestHandler<DeleteOutd
         this.dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
     }
 
-    public async Task<Unit> Handle(DeleteOutdatedShorthandsCommand request, CancellationToken cancellationToken)
+    public async Task Handle(DeleteOutdatedShorthandsCommand request, CancellationToken cancellationToken)
     {
         var aMonthAgo = DateTime.UtcNow.AddMonths(-1);
         var toRemove = await this.dbContext.Shorthands
@@ -22,7 +22,5 @@ public class DeleteOutdatedShorthandsCommandHandler : IRequestHandler<DeleteOutd
 
         this.dbContext.RemoveRange(toRemove);
         await this.dbContext.SaveChangesAsync(cancellationToken);
-
-        return Unit.Value;
     }
 }
