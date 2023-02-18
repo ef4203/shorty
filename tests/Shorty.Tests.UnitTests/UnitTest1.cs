@@ -1,4 +1,4 @@
-namespace Shorty.Tests;
+namespace Shorty.Tests.UnitTests;
 
 public class Tests
 {

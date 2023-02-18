@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{750233E2-BCFF-4D57-ABCE-37A521EDBA02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shorty.Tests", "tests\Shorty.Tests\Shorty.Tests.csproj", "{7C9103F7-837C-43F9-8824-60AE8AF59F3D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shorty.Tests.UnitTests", "tests\Shorty.Tests.UnitTests\Shorty.Tests.UnitTests.csproj", "{7C9103F7-837C-43F9-8824-60AE8AF59F3D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{81E1FF21-9C11-48FB-B051-665271B2B12A}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shorty.Web", "src\Shorty.Web\Shorty.Web.csproj", "{9796C96F-7430-439B-BEB9-00B2B42976C2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shorty.Infrastructure", "src\Shorty.Infrastructure\Shorty.Infrastructure.csproj", "{626E6E0A-535A-480E-B94A-CE85514B352E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shorty.Tests.IntegrationTests", "tests\Shorty.Tests.IntegrationTests\Shorty.Tests.IntegrationTests.csproj", "{0CE3E885-B3ED-45D8-8201-5C74C964FFBB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{626E6E0A-535A-480E-B94A-CE85514B352E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{626E6E0A-535A-480E-B94A-CE85514B352E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{626E6E0A-535A-480E-B94A-CE85514B352E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CE3E885-B3ED-45D8-8201-5C74C964FFBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CE3E885-B3ED-45D8-8201-5C74C964FFBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CE3E885-B3ED-45D8-8201-5C74C964FFBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CE3E885-B3ED-45D8-8201-5C74C964FFBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,5 +62,6 @@ Global
 		{EB73B849-CF56-4965-9589-84558B2D4FE7} = {81E1FF21-9C11-48FB-B051-665271B2B12A}
 		{9796C96F-7430-439B-BEB9-00B2B42976C2} = {81E1FF21-9C11-48FB-B051-665271B2B12A}
 		{626E6E0A-535A-480E-B94A-CE85514B352E} = {81E1FF21-9C11-48FB-B051-665271B2B12A}
+		{0CE3E885-B3ED-45D8-8201-5C74C964FFBB} = {750233E2-BCFF-4D57-ABCE-37A521EDBA02}
 	EndGlobalSection
 EndGlobal

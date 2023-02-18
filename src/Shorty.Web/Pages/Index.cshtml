@@ -1,6 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+@page "/"
+@model Shorty.Web.Pages.Index
 
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html lang="en">
 <head>
     <meta charset="UTF-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -10,9 +16,9 @@
 
     <title>Shorty</title>
 </head>
-
 <body>
 <div class="content">
+    <h1>Shorty</h1>
     <input id="urlinput" type="text">
     <button onclick="createShortHand()">Shorten</button>
     <br>
@@ -20,5 +26,4 @@
 </div>
 <script src="assets/script.js"></script>
 </body>
-
 </html>

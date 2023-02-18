@@ -12,14 +12,14 @@ public static class Program
         var builder = WebApplication.CreateBuilder(args);
 
         Log.Logger = new LoggerConfiguration()
-            .MinimumLevel.Debug()
+            .MinimumLevel.Information()
             .WriteTo.Console()
             .CreateLogger();
 
         builder.Host.UseSerilog();
 
+        builder.Services.AddRazorPages();
         builder.Services.AddControllers();
-        builder.Services.AddLogging();
         builder.Services.AddControllersWithViews(
             o => { o.Filters.Add<ApiExceptionFilterAttribute>(); });
 
@@ -29,6 +29,8 @@ public static class Program
         var app = builder.Build();
 
         app.MapControllers();
+        app.MapRazorPages();
+        app.UseRouting();
         app.UseFileServer();
 
         app.UseInfrastructureServices();
