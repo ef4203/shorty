@@ -6,7 +6,6 @@ using Shorty.Application.Shorthands.Commands.CreateShorthand;
 using Shorty.Application.Shorthands.Commands.DeleteOutdatedShorthands;
 using Shorty.Application.Shorthands.Queries.GetShorthand;
 using Shorty.Domain;
-using Shorty.Infrastructure;
 
 [ApiController]
 [Route("s")]
@@ -14,7 +13,7 @@ public class ShorthandController : ControllerBase
 {
     private readonly ISender mediatr;
 
-    public ShorthandController(ApplicationContext context, ISender mediatr)
+    public ShorthandController(ISender mediatr)
     {
         this.mediatr = mediatr ?? throw new ArgumentNullException(nameof(mediatr));
     }

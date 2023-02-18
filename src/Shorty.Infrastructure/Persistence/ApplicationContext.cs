@@ -1,4 +1,4 @@
-﻿namespace Shorty.Infrastructure;
+﻿namespace Shorty.Infrastructure.Persistence;
 
 using Microsoft.EntityFrameworkCore;
 using Shorty.Application.Common.Abstraction;

@@ -1,10 +1,9 @@
 ﻿namespace Shorty.Web;
 
-using Microsoft.EntityFrameworkCore;
 using Serilog;
 using Shorty.Application;
-using Shorty.Application.Common.Abstraction;
 using Shorty.Infrastructure;
+using Shorty.Web.Filter;
 
 public static class Program
 {
@@ -12,7 +11,6 @@ public static class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Configure logging.
         Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Debug()
             .WriteTo.Console()
@@ -22,21 +20,18 @@ public static class Program
 
         builder.Services.AddControllers();
         builder.Services.AddLogging();
-        builder.Services.AddControllersWithViews();
-        builder.Services.AddApplicationServices();
+        builder.Services.AddControllersWithViews(
+            o => { o.Filters.Add<ApiExceptionFilterAttribute>(); });
 
-        builder.Services.AddDbContext<ApplicationContext>(
-            o => o.UseSqlite("Data Source=data.db"));
-        builder.Services.AddTransient<IApplicationContext, ApplicationContext>();
+        builder.Services.AddApplicationServices();
+        builder.Services.AddInfrastructureServices();
 
         var app = builder.Build();
 
         app.MapControllers();
         app.UseFileServer();
 
-        using var scope = app.Services.CreateScope();
-        var db = scope.ServiceProvider.GetRequiredService<ApplicationContext>();
-        db.Database.Migrate();
+        app.UseInfrastructureServices();
 
         app.Run();
     }
