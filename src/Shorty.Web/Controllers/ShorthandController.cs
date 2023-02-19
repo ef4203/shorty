@@ -35,6 +35,6 @@ public class ShorthandController : ControllerBase
 
     [HttpPatch]
     public async Task Patch(
-        [FromBody] UpdateShorthandCommandHandler.UpdateShorthandCommand data) 
+        [FromBody] UpdateShorthandCommand data) 
         => await this.mediatr.Send(data);
 }

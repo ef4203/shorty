@@ -2,11 +2,12 @@ namespace Shorty.Application.Shorthands.Commands.UpdateShorthand;
 
 using MediatR;
 using Shorty.Application.Common.Abstraction;
+using Shorty.Application.Common.Exceptions;
 
-public class UpdateShorthandCommandHandler : IRequestHandler<UpdateShorthandCommandHandler.UpdateShorthandCommand>
+public record UpdateShorthandCommand(string? Url, string? Destination) : IRequest;
+
+internal sealed class UpdateShorthandCommandHandler : IRequestHandler<UpdateShorthandCommand>
 {
-    public record UpdateShorthandCommand(string? Url, string? Destination) : IRequest;
-
     private readonly IApplicationContext dbContext;
 
     public UpdateShorthandCommandHandler(IApplicationContext dbContext)
@@ -24,11 +25,11 @@ public class UpdateShorthandCommandHandler : IRequestHandler<UpdateShorthandComm
         var entity = await this.dbContext.Shorthands.FindAsync(request.Url);
         if (entity == null)
         {
-            throw new ArgumentException($"The entry was not found by given parameter {request.Url}.");
+            throw new NotFoundException($"The entry was not found by given parameter {request.Url}.");
         }
 
         entity.Destination = request.Destination;
         this.dbContext.Shorthands.Update(entity);
-        _ = await this.dbContext.SaveChangesAsync(cancellationToken);
+        await this.dbContext.SaveChangesAsync(cancellationToken);
     }
 }

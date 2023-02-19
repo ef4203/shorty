@@ -1,7 +1,6 @@
 namespace Shorty.Application.Shorthands.Commands.UpdateShorthand;
 
 using FluentValidation;
-using static Shorty.Application.Shorthands.Commands.UpdateShorthand.UpdateShorthandCommandHandler;
 
 public class UpdateShorthandCommandValidator : AbstractValidator<UpdateShorthandCommand>
 {
