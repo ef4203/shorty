@@ -1,5 +1,5 @@
 function createShortHand() {
-    var data = document.getElementById('urlinput').value;
+    var data = document.getElementById('url-input').value;
 
     if (!data || data === "") return;
 

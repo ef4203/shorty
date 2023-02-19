@@ -19,6 +19,7 @@ public static class Program
         builder.Host.UseSerilog();
 
         builder.Services.AddRazorPages();
+        builder.Services.AddServerSideBlazor();
         builder.Services.AddControllers();
         builder.Services.AddControllersWithViews(
             o => { o.Filters.Add<ApiExceptionFilterAttribute>(); });
@@ -30,8 +31,9 @@ public static class Program
 
         app.MapControllers();
         app.MapRazorPages();
+        app.MapBlazorHub();
         app.UseRouting();
-        app.UseFileServer();
+        app.UseStaticFiles();
 
         app.UseInfrastructureServices();
 
