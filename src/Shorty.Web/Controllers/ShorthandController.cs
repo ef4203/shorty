@@ -1,9 +1,10 @@
-﻿namespace Shorty.Web.Controllers;
+namespace Shorty.Web.Controllers;
 
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Shorty.Application.Shorthands.Commands.CreateShorthand;
 using Shorty.Application.Shorthands.Commands.DeleteOutdatedShorthands;
+using Shorty.Application.Shorthands.Commands.UpdateShorthand;
 using Shorty.Application.Shorthands.Queries.GetShorthand;
 
 [ApiController]
@@ -31,4 +32,9 @@ public class ShorthandController : ControllerBase
     {
         return await this.mediatr.Send(data);
     }
+
+    [HttpPatch("{url}")]
+    public async Task Patch(
+        [FromBody] UpdateShorthandCommandHandler.UpdateShorthandCommand data) 
+        => await this.mediatr.Send(data);
 }
