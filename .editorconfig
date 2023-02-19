@@ -145,7 +145,7 @@ dotnet_diagnostic.CA2007.severity = none
 # Use Logger message delegates.
 dotnet_diagnostic.CA1848.severity = none
 
-[{*.har,*.inputactions,*.jsb2,*.jsb3,*.json,.babelrc,.eslintrc,.stylelintrc,bowerrc,jest.config}]
+[{*.har,*.inputactions,*.jsb2,*.jsb3,*.json,.babelrc,.eslintrc,.stylelintrc,bowerrc,jest.config,*.yml}]
 indent_style = space
 indent_size = 2
 
