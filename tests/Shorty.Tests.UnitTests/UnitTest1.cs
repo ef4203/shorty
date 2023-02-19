@@ -1,10 +1,11 @@
 namespace Shorty.Tests.UnitTests;
 
-public class Tests
+public class UnitTest1
 {
     [SetUp]
     public void Setup()
     {
+        // ... setup up code here.
     }
 
     [Test]

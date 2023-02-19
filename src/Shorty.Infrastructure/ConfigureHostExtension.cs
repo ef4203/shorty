@@ -7,7 +7,6 @@ using Shorty.Infrastructure.Persistence;
 
 public static class ConfigureHostExtension
 {
-    
     public static IHost UseInfrastructureServices(this IHost app)
     {
         _ = app ?? throw new ArgumentNullException(nameof(app));
@@ -31,6 +30,4 @@ public static class ConfigureHostExtension
 
         return app;
     }
-
 }
-

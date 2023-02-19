@@ -1,4 +1,5 @@
 @page "/"
+@using Shorty.Web.Components
 @namespace Shorty.Web.Pages
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelper
 
@@ -9,15 +10,15 @@
     <meta charset="UTF-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link href="assets/style.css" rel="stylesheet"/>
-    <base href="~/" />
+    <base href="~/"/>
     <title>Shorty</title>
 </head>
 <body>
 
 <div class="content" id="app">
-    @(await Html.RenderComponentAsync<Components.Layout>(RenderMode.Server))
+    @(await Html.RenderComponentAsync<Layout>(RenderMode.Server))
 </div>
 
 <script src="_framework/blazor.server.js"></script>

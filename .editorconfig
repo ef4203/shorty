@@ -108,6 +108,14 @@ resharper_trailing_comma_in_multiline_lists = true
 resharper_use_indent_from_vs = false
 resharper_wrap_array_initializer_style = chop_if_long
 resharper_wrap_before_extends_colon = true
+resharper_csharp_place_type_attribute_on_same_line = never
+resharper_place_type_attribute_on_same_line = never
+resharper_csharp_place_method_attribute_on_same_line = never
+resharper_place_method_attribute_on_same_line = never
+resharper_csharp_place_accessorholder_attribute_on_same_line = never
+resharper_csharp_place_attribute_on_same_line = never
+resharper_place_accessorholder_attribute_on_same_line = never
+resharper_place_attribute_on_same_line = never
 
 # ReSharper inspection severities
 resharper_arrange_redundant_parentheses_highlighting = hint
@@ -144,6 +152,8 @@ dotnet_diagnostic.CA1014.severity = none
 dotnet_diagnostic.CA2007.severity = none
 # Use Logger message delegates.
 dotnet_diagnostic.CA1848.severity = none
+# Internal class is never instantiated, false positive.
+dotnet_diagnostic.CA1812.severity = none
 
 [{*.har,*.inputactions,*.jsb2,*.jsb3,*.json,.babelrc,.eslintrc,.stylelintrc,bowerrc,jest.config,*.yml}]
 indent_style = space

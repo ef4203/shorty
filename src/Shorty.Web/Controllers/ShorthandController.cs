@@ -18,11 +18,14 @@ public class ShorthandController : ControllerBase
         this.mediatr = mediatr ?? throw new ArgumentNullException(nameof(mediatr));
     }
 
-    [HttpGet("{url}")]
-    public async Task<ActionResult> Get([FromRoute] string url)
+    [HttpGet("{id}")]
+    public async Task<ActionResult> Get([FromRoute] string id)
     {
+#pragma warning disable CS4014
+        // This is not awaited, as a temporary work around.
         this.mediatr.Send(new DeleteOutdatedShorthandsCommand());
-        var result = await this.mediatr.Send(new GetShorthandQuery { Id = url });
+#pragma warning restore CS4014
+        var result = await this.mediatr.Send(new GetShorthandQuery { Id = id });
 
         return this.Redirect(result);
     }
@@ -34,7 +37,8 @@ public class ShorthandController : ControllerBase
     }
 
     [HttpPatch]
-    public async Task Patch(
-        [FromBody] UpdateShorthandCommand data) 
-        => await this.mediatr.Send(data);
+    public async Task Patch([FromBody] UpdateShorthandCommand data)
+    {
+        await this.mediatr.Send(data);
+    }
 }

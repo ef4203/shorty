@@ -11,7 +11,9 @@ public static class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+#pragma warning disable CA1305
         Log.Logger = new LoggerConfiguration()
+#pragma warning restore CA1305
             .MinimumLevel.Information()
             .WriteTo.Console()
             .CreateLogger();

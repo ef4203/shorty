@@ -11,11 +11,10 @@ public static class ConfigureServicesExtension
     {
         _ = services ?? throw new ArgumentNullException(nameof(services));
 
-        
         services.AddDbContext<ApplicationContext>(
             o => o.UseSqlite("Data Source=data.db"));
         services.AddTransient<IApplicationContext, ApplicationContext>();
-        
+
         return services;
     }
 }

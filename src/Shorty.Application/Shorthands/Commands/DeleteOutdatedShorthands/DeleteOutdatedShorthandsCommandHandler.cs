@@ -4,7 +4,8 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Shorty.Application.Common.Abstraction;
 
-public class DeleteOutdatedShorthandsCommandHandler : IRequestHandler<DeleteOutdatedShorthandsCommand>
+[UsedImplicitly]
+internal sealed class DeleteOutdatedShorthandsCommandHandler : IRequestHandler<DeleteOutdatedShorthandsCommand>
 {
     private readonly IApplicationContext dbContext;
 

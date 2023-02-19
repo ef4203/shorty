@@ -4,7 +4,8 @@ using MediatR;
 using Shorty.Application.Common.Abstraction;
 using Shorty.Domain;
 
-public class CreateShorthandCommandHandler : IRequestHandler<CreateShorthandCommand, string>
+[UsedImplicitly]
+internal sealed class CreateShorthandCommandHandler : IRequestHandler<CreateShorthandCommand, string>
 {
     private readonly IApplicationContext dbContext;
 

@@ -4,6 +4,7 @@ using FluentValidation;
 using MediatR;
 using ValidationException = Shorty.Application.Common.Exceptions.ValidationException;
 
+[UsedImplicitly]
 internal sealed class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     where TRequest : IRequest<TResponse>
 {

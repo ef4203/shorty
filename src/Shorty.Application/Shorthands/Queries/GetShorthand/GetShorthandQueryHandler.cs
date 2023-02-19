@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Shorty.Application.Common.Abstraction;
 using Shorty.Application.Common.Exceptions;
 
+[UsedImplicitly]
 internal sealed class GetShorthandQueryHandler : IRequestHandler<GetShorthandQuery, string>
 {
     private readonly IApplicationContext dbContext;
