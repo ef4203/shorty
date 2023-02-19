@@ -33,7 +33,7 @@ public class ShorthandController : ControllerBase
         return await this.mediatr.Send(data);
     }
 
-    [HttpPatch("{url}")]
+    [HttpPatch]
     public async Task Patch(
         [FromBody] UpdateShorthandCommandHandler.UpdateShorthandCommand data) 
         => await this.mediatr.Send(data);
