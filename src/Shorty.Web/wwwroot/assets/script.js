@@ -4,7 +4,7 @@ function createShortHand() {
     if (!data || data === "") return;
 
     var request = new XMLHttpRequest();
-    request.open('POST', '/s', true);
+    request.open('POST', '/api/shorthands', true);
     request.setRequestHeader('Content-Type', 'application/json');
     request.send(JSON.stringify({
         destination: data
@@ -12,6 +12,6 @@ function createShortHand() {
 
     request.onreadystatechange = () => {
         var p = document.getElementById('result');
-        p.innerHTML = `${request.responseURL}/${request.response}`;
+        p.innerHTML = `${window.location.origin}/s/${request.response}`;
     };
 }

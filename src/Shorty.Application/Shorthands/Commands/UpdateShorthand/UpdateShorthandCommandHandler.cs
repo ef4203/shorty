@@ -4,9 +4,9 @@ using MediatR;
 using Shorty.Application.Common.Abstraction;
 using Shorty.Application.Common.Exceptions;
 
-public record UpdateShorthandCommand : IRequest
+public record UpdateShorthandCommand(string? Id) : IRequest
 {
-    public string? Id { get; set; }
+    public string? Id { get; set; } = Id;
 
     public string? Destination { get; set; }
 }

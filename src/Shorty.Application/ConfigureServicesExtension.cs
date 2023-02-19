@@ -6,6 +6,7 @@ using MediatR;
 using MediatR.NotificationPublishers;
 using Microsoft.Extensions.DependencyInjection;
 using Shorty.Application.Common.Behaviors;
+using Shorty.Application.Common.Mapping;
 
 public static class ConfigureServicesExtension
 {
@@ -17,6 +18,8 @@ public static class ConfigureServicesExtension
         services.AddValidatorsFromAssembly(typeof(ConfigureServicesExtension).Assembly);
 
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+
+        services.AddMappings();
 
         return services;
     }
@@ -33,5 +36,10 @@ public static class ConfigureServicesExtension
             });
 
         return services;
+    }
+
+    private static void AddMappings(this IServiceCollection services)
+    {
+        _ = new ShorthandMappingConfiguration();
     }
 }
