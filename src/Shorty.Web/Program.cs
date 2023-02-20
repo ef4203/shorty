@@ -43,6 +43,7 @@ public static class Program
         app.MapControllers();
         app.MapRazorPages();
         app.MapBlazorHub();
+        app.MapFallbackToPage("/Index");
         app.UseRouting();
         app.UseStaticFiles();
 

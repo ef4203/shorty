@@ -1,0 +1,13 @@
+@page "/"
+<h2>Create a shorthand</h2>
+<p>Welcome to Shorty, you can shorten links on this page.</p>
+<div class="mb-3">
+    <label for="url-input" class="form-label">URL</label>
+    <input type="text" class="form-control" id="url-input" aria-describedby="url-help">
+    <div id="url-help" class="form-text">Enter the URL you want to shorten here.</div>
+</div>
+<button onclick="createShortHand()" class="btn btn-primary">Submit</button>
+<h2 id="result"></h2>
+
+@code {
+}

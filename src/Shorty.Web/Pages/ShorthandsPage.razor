@@ -1,0 +1,49 @@
+@using MediatR
+@using Shorty.Application.Shorthands.Queries.GetAllShorthands
+@inject ISender Mediator
+@page "/shorthands"
+
+<h2>Shorthands</h2>
+<p>You can manage your shorthands on this page.</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Date Added</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var shorthand in this.shorthands)
+    {
+        <tr>
+            <td>@shorthand.Id</td>
+            <td>@shorthand.Destination</td>
+            <td>@shorthand.DateAdded</td>
+            <td>
+                <button type="button" class="btn btn-primary">
+                    <i class="bi bi-pencil-fill"></i>
+                </button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger">
+                    <i class="bi bi-trash-fill"></i>
+                </button>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+@code {
+
+    private IEnumerable<ShorthandDto> shorthands = new HashSet<ShorthandDto>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        this.shorthands = await this.Mediator.Send(new GetAllShorthandsQuery());
+        await base.OnInitializedAsync();
+    }
+}
