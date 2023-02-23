@@ -4,6 +4,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Shorty.Application.Shorthands.Commands.CreateShorthand;
 using Shorty.Application.Shorthands.Commands.DeleteOutdatedShorthands;
+using Shorty.Application.Shorthands.Commands.DeleteShorthand;
 using Shorty.Application.Shorthands.Commands.UpdateShorthand;
 using Shorty.Application.Shorthands.Queries.GetShorthand;
 
@@ -37,4 +38,8 @@ public class ShorthandController : ControllerBase
     public async Task Patch(
         [FromBody] UpdateShorthandCommand data) 
         => await this.mediatr.Send(data);
+
+    [HttpDelete("{url}")]
+    public async Task Delete([FromRoute] string url)
+        => await this.mediatr.Send(new DeleteShorthandCommand(url));
 }
