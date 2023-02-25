@@ -1,17 +1,27 @@
-function createShortHand() {
-    var data = document.getElementById('url-input').value;
+async function createShortHand() 
+{
+    let data = document.getElementById('url-input').value;
 
-    if (!data || data === "") return;
+    if (!data || data === "") 
+        return;
+    
+    let result = await fetch('/api/shorthands', { 
+        method: 'POST', 
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ destination: data })
+    });
 
-    var request = new XMLHttpRequest();
-    request.open('POST', '/api/shorthands', true);
-    request.setRequestHeader('Content-Type', 'application/json');
-    request.send(JSON.stringify({
-        destination: data
-    }));
+    if (result.ok){
+        document.getElementById('result').innerHTML = 
+            `${window.location.origin}/s/${await result.text()}`;
+    }
+}
 
-    request.onreadystatechange = () => {
-        var p = document.getElementById('result');
-        p.innerHTML = `${window.location.origin}/s/${request.response}`;
-    };
+async function deleteShortHand(id) 
+{
+   if (!id || id === "") 
+       return;
+   
+   let result = await fetch(`/api/shorthands/${id}`, { method: 'DELETE' });
+   window.location.reload();
 }

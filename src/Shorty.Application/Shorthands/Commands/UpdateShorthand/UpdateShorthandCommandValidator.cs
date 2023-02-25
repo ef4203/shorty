@@ -9,7 +9,7 @@ public class UpdateShorthandCommandValidator : AbstractValidator<UpdateShorthand
         this.RuleFor(o => o.Destination)
             .NotEmpty()
             .NotNull()
-            .Must(o => Uri.IsWellFormedUriString(o, UriKind.RelativeOrAbsolute))
+            .Must(o => Uri.IsWellFormedUriString(o, UriKind.Absolute))
             .WithMessage("Must be a valid Uri.");
     }
 }
