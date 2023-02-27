@@ -4,9 +4,9 @@ using Mapster;
 using Shorty.Application.Shorthands.Queries.GetAllShorthands;
 using Shorty.Domain;
 
-internal sealed class ShorthandMappingConfiguration
+internal static class ShorthandMappingConfiguration
 {
-    public ShorthandMappingConfiguration()
+    public static void Apply()
     {
         TypeAdapterConfig.GlobalSettings
             .ForType<Shorthand, ShorthandDto>()
