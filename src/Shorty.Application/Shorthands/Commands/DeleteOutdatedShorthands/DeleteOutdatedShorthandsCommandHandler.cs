@@ -16,12 +16,12 @@ internal sealed class DeleteOutdatedShorthandsCommandHandler : IRequestHandler<D
 
     public async Task Handle(DeleteOutdatedShorthandsCommand request, CancellationToken cancellationToken)
     {
-        var aMonthAgo = DateTime.UtcNow.AddMonths(-1);
         var toRemove = await this.dbContext.Shorthands
-            .Where(x => x.DateAdded < aMonthAgo)
-            .ToListAsync(cancellationToken);
+            .Where(x => x.ExpiresAfterDays > 0)
+            .Where(x => x.DateAdded.AddDays(x.ExpiresAfterDays) > DateTime.UtcNow)
+            .ToArrayAsync(cancellationToken);
 
-        this.dbContext.RemoveRange(toRemove);
+        this.dbContext.Shorthands.RemoveRange(toRemove);
         await this.dbContext.SaveChangesAsync(cancellationToken);
     }
 }

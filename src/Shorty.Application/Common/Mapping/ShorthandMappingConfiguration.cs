@@ -11,6 +11,17 @@ internal static class ShorthandMappingConfiguration
         TypeAdapterConfig.GlobalSettings
             .ForType<Shorthand, ShorthandDto>()
             .Map(dest => dest.Id, src => src.Url)
+            .Map(dest => dest.ExpirationDate, src => ComputeExpirationDate(src))
             .TwoWays();
+    }
+
+    private static DateTime? ComputeExpirationDate(Shorthand src)
+    {
+        if (src.ExpiresAfterDays < 0)
+        {
+            return null;
+        }
+
+        return src.DateAdded.AddDays(src.ExpiresAfterDays);
     }
 }

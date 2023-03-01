@@ -22,6 +22,7 @@ internal sealed class CreateShorthandCommandHandler : IRequestHandler<CreateShor
         {
             Url = Guid.NewGuid().ToString("n")[..5],
             Destination = request.Destination,
+            ExpiresAfterDays = request.ExpiresAfterDays,
             DateAdded = DateTime.UtcNow,
         };
 

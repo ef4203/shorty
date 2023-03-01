@@ -2,14 +2,24 @@ namespace Shorty.Application.Shorthands.Commands.UpdateShorthand;
 
 using FluentValidation;
 
-public class UpdateShorthandCommandValidator : AbstractValidator<UpdateShorthandCommand>
+[UsedImplicitly]
+public sealed class UpdateShorthandCommandValidator : AbstractValidator<UpdateShorthandCommand>
 {
     public UpdateShorthandCommandValidator()
     {
-        this.RuleFor(o => o.Destination)
+        this.RuleFor(x => x.Id)
+            .NotEmpty()
+            .NotNull()
+            .Length(5);
+
+        this.RuleFor(x => x.Destination)
             .NotEmpty()
             .NotNull()
             .Must(o => Uri.IsWellFormedUriString(o, UriKind.Absolute))
             .WithMessage("Must be a valid Uri.");
+
+        this.RuleFor(x => x.ExpiresAfterDays)
+            .GreaterThanOrEqualTo(-1)
+            .LessThanOrEqualTo(365 * 10);
     }
 }

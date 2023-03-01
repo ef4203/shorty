@@ -5,6 +5,10 @@
     <label for="url-input" class="form-label">URL</label>
     <input type="text" class="form-control" id="url-input" aria-describedby="url-help">
     <div id="url-help" class="form-text">Enter the URL you want to shorten here.</div>
+    <br>
+    <label for="validity-input" class="form-label">Expires in</label>
+    <input type="number" class="form-control" id="validity-input" aria-describedby="validity-help">
+    <div id="validity-help" class="form-text">Enter the number of days you want the shorthand to be valid for.</div>
 </div>
 <button onclick="createShortHand()" class="btn btn-primary">Submit</button>
 <h2 id="result"></h2>

@@ -4,13 +4,6 @@ using MediatR;
 using Shorty.Application.Common.Abstraction;
 using Shorty.Application.Common.Exceptions;
 
-public record UpdateShorthandCommand(string? Id) : IRequest
-{
-    public string? Id { get; set; } = Id;
-
-    public string? Destination { get; set; }
-}
-
 [UsedImplicitly]
 internal sealed class UpdateShorthandCommandHandler : IRequestHandler<UpdateShorthandCommand>
 {
@@ -35,6 +28,8 @@ internal sealed class UpdateShorthandCommandHandler : IRequestHandler<UpdateShor
         }
 
         entity.Destination = request.Destination;
+        entity.ExpiresAfterDays = request.ExpiresAfterDays;
+
         this.dbContext.Shorthands.Update(entity);
         await this.dbContext.SaveChangesAsync(cancellationToken);
     }

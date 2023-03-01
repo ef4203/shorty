@@ -6,5 +6,7 @@ public class ShorthandDto
 
     public string? Destination { get; set; }
 
-    public DateTime? DateAdded { get; set; }
+    public DateTime DateAdded { get; set; } = DateTime.MinValue;
+
+    public DateTime? ExpirationDate { get; set; }
 }

@@ -2,6 +2,7 @@ namespace Shorty.Application.Shorthands.Queries.GetShorthand;
 
 using FluentValidation;
 
+[UsedImplicitly]
 public class GetShorthandQueryValidator : AbstractValidator<GetShorthandQuery>
 {
     public GetShorthandQueryValidator()
