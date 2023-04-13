@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
@@ -22,7 +22,7 @@
         <PackageReference Include="Hangfire.AspNetCore" Version="1.7.33"/>
         <PackageReference Include="Hangfire.Core" Version="1.7.33"/>
         <PackageReference Include="Hangfire.MemoryStorage" Version="1.7.0"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.4"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.4"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.4"/>
         <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="7.0.0"/>
