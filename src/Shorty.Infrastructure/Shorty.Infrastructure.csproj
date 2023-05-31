@@ -26,7 +26,7 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.5"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.5"/>
         <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="7.0.0"/>
-        <PackageReference Include="SonarAnalyzer.CSharp" Version="8.56.0.67649">
+        <PackageReference Include="SonarAnalyzer.CSharp" Version="9.2.0.71021">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
