@@ -1,9 +1,9 @@
 namespace Shorty.Application.Common.Exceptions;
 
-using System.Runtime.Serialization;
-
 [Serializable]
+#pragma warning disable S3925
 public class NotFoundException : Exception
+#pragma warning restore S3925
 {
     public NotFoundException()
     {
@@ -21,11 +21,6 @@ public class NotFoundException : Exception
 
     public NotFoundException(string name, object key)
         : base($"Entity \"{name}\" ({key}) was not found.")
-    {
-    }
-
-    protected NotFoundException(SerializationInfo info, StreamingContext context)
-        : base(info, context)
     {
     }
 }

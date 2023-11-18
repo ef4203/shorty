@@ -1,10 +1,11 @@
 namespace Shorty.Application.Common.Exceptions;
 
-using System.Runtime.Serialization;
 using FluentValidation.Results;
 
 [Serializable]
+#pragma warning disable S3925
 public class ValidationException : Exception
+#pragma warning restore S3925
 {
     public ValidationException(string message)
         : base(message)
@@ -28,11 +29,6 @@ public class ValidationException : Exception
         this.Errors = failures
             .GroupBy(e => e.PropertyName, e => e.ErrorMessage)
             .ToDictionary(failureGroup => failureGroup.Key, failureGroup => failureGroup.ToArray());
-    }
-
-    protected ValidationException(SerializationInfo info, StreamingContext context)
-        : base(info, context)
-    {
     }
 
     public IDictionary<string, string[]> Errors { get; } = null!;

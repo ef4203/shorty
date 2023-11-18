@@ -6,7 +6,7 @@ using Shorty.Application.Common.Exceptions;
 
 public sealed class ApiExceptionFilterAttribute : ExceptionFilterAttribute
 {
-    private readonly IDictionary<Type, Action<ExceptionContext>> exceptionHandlers;
+    private readonly Dictionary<Type, Action<ExceptionContext>> exceptionHandlers;
 
     public ApiExceptionFilterAttribute()
     {
