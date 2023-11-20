@@ -335,3 +335,6 @@ ASALocalRun/
 
 # MacOs
 .DS_Store
+
+# SBOM
+bom.json
