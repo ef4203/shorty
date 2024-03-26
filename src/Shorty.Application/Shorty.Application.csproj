@@ -25,7 +25,7 @@
         <PackageReference Include="Mapster" Version="7.4.0"/>
         <PackageReference Include="MediatR" Version="12.2.0"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.1"/>
-        <PackageReference Include="SonarAnalyzer.CSharp" Version="9.19.0.84025">
+        <PackageReference Include="SonarAnalyzer.CSharp" Version="9.23.0.88079">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
