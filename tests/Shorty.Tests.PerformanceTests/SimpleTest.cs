@@ -1,7 +1,9 @@
 namespace Shorty.Tests.PerformanceTests;
 
 using BenchmarkDotNet.Attributes;
+using Mapster;
 using Shorty.Application.Common.Mapping;
+using Shorty.Application.Shorthands.Queries.GetAllShorthands;
 using Shorty.Domain;
 
 public class SimpleTest
@@ -16,6 +18,7 @@ public class SimpleTest
             ExpiresAfterDays = 30,
         };
         
-        ShorthandMappingConfiguration.ComputeExpirationDate(obj);
+        ShorthandMappingConfiguration.Apply();
+        obj.Adapt<ShorthandDto>();
     }
 }
