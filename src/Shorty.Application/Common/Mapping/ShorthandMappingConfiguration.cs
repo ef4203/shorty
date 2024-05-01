@@ -4,7 +4,7 @@ using Mapster;
 using Shorty.Application.Shorthands.Queries.GetAllShorthands;
 using Shorty.Domain;
 
-internal static class ShorthandMappingConfiguration
+public static class ShorthandMappingConfiguration
 {
     public static void Apply()
     {
@@ -15,8 +15,10 @@ internal static class ShorthandMappingConfiguration
             .TwoWays();
     }
 
-    private static DateTime? ComputeExpirationDate(Shorthand src)
+    public static DateTime? ComputeExpirationDate(Shorthand src)
     {
+        ArgumentNullException.ThrowIfNull(src);
+
         if (src.ExpiresAfterDays < 0)
         {
             return null;
