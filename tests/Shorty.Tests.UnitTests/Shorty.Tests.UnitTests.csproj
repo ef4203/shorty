@@ -33,7 +33,7 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="FluentAssertions" Version="6.12.0"/>
-        <PackageReference Include="SonarAnalyzer.CSharp" Version="9.23.1.88495">
+        <PackageReference Include="SonarAnalyzer.CSharp" Version="9.27.0.93347">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
