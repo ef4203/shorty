@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:8.0.303 AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0.402 AS build
 WORKDIR /src
 COPY /src .
 RUN dotnet restore "Shorty.Web/Shorty.Web.csproj"
