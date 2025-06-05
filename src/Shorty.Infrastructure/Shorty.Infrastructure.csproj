@@ -19,14 +19,14 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Hangfire.AspNetCore" Version="1.8.14"/>
-        <PackageReference Include="Hangfire.Core" Version="1.8.14"/>
+        <PackageReference Include="Hangfire.AspNetCore" Version="1.8.20"/>
+        <PackageReference Include="Hangfire.Core" Version="1.8.20"/>
         <PackageReference Include="Hangfire.MemoryStorage" Version="1.8.1.1"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.5"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.5"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.3"/>
-        <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0"/>
-        <PackageReference Include="SonarAnalyzer.CSharp" Version="9.23.1.88495">
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.5"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.5"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.5"/>
+        <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="9.0.5"/>
+        <PackageReference Include="SonarAnalyzer.CSharp" Version="10.10.0.116381">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
